@@ -30,7 +30,9 @@ class UserController {
 
       //save user
       $user->subscription_expiration = $siigoLog->subscription_expiration;
-      $user->save();
+      if($_ENV['DEPLOY'] == 'prod') {
+        $user->save();
+      }
       $siigoLog->save();
 
       array_push($res, [
