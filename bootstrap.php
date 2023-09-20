@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Capsule\Manager as Capsule;
-$dotenv = Dotenv\Dotenv::createImmutable('./');
+$dotenv = Dotenv\Dotenv::createImmutable($current_dir.'/');
 $dotenv->load();
 
 $capsule = new Capsule;

@@ -1,6 +1,8 @@
 <?php
-require_once './vendor/autoload.php';
-require './bootstrap.php';
+// get current dir
+$current_dir = dirname(__FILE__);
+require_once $current_dir.'/vendor/autoload.php';
+require $current_dir.'/bootstrap.php';
 
 $invoices = InvoiceController::getInvoices();
 $res = [];

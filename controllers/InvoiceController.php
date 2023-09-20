@@ -22,7 +22,8 @@ class InvoiceController {
     }
   }
   public static function getToken() {
-    $nombre_fichero = "./token.json";
+    $current_dir = dirname(__FILE__);
+    $nombre_fichero = $current_dir."/token.json";
     $gestor = fopen($nombre_fichero, "r");
     $saveToken = "[]";
     if(filesize($nombre_fichero) > 0) {
