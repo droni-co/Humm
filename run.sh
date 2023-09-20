@@ -1,0 +1,1 @@
+php /var/www/Humm/index.php
