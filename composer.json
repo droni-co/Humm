@@ -1,0 +1,24 @@
+{
+  "name": "dronico/humm2",
+  "autoload": {
+    "psr-4": {
+      "Dronico\\Humm2\\": "src/"
+    },
+    "classmap": [
+      "models",
+      "controllers"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Gustavo Barragan",
+      "email": "dev@droni.co"
+    }
+  ],
+  "require": {
+    "illuminate/database": "^8.83",
+    "vlucas/phpdotenv": "^5.5",
+    "guzzlehttp/guzzle": "^7.0",
+    "nesbot/carbon": "^2.70"
+  }
+}
