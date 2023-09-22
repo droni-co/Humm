@@ -15,24 +15,52 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `siigologs`
---
-
 DROP TABLE IF EXISTS `siigologs`;
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `siigologs` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int unsigned DEFAULT NULL,
-  `siigo_id` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `subscription_expiration_old` timestamp NOT NULL,
-  `subscription_expiration` timestamp NOT NULL,
-  `code` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `quantity` int unsigned DEFAULT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `siigo_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `subscription_expiration_old` timestamp DEFAULT NULL,
+  `subscription_expiration` timestamp DEFAULT NULL,
+  `code` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `quantity` int(10) unsigned DEFAULT NULL,
   `seller` int unsigned DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3966 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `siigologs`
+--
+
+LOCK TABLES `siigologs` WRITE;
+/*!40000 ALTER TABLE `siigologs` DISABLE KEYS */;
+INSERT INTO `siigologs` VALUES (1,3352,'e741682d-d007-41fa-b366-c4c17741dc5a','2023-08-06 04:55:00','2023-09-06 04:55:00','MONI02',1,0,'2023-09-22 00:00:12','2023-09-22 00:00:12'),
+  (2,3970,'5e04f267-0ded-49cb-9a71-da1a4830709c','2023-10-06 04:55:00','2023-11-06 04:55:00','MONI01',1,0,'2023-09-22 00:42:11','2023-09-22 00:42:11'),
+  (3,2013,'c9fff304-165d-4326-b4b3-a9344a2b21d7','2023-09-06 04:55:00','2023-10-06 04:55:00','MONI02',1,0,'2023-09-22 01:58:07','2023-09-22 01:58:07'),
+  (4,3970,'17a25756-3f20-4199-803b-2a7254ad439e','2023-11-06 04:55:00','2023-12-06 04:55:00','MONI01',1,0,'2023-09-22 19:20:11','2023-09-22 19:20:11'),
+  (5,564,'be3fa7f1-e494-4136-9bdc-d5a1ce651080','2023-09-06 04:55:00','2023-10-06 04:55:00','MONI01',1,0,'2023-09-22 20:53:58','2023-09-22 20:53:58'),
+  (6,564,'8fbc9a2f-af30-42f0-87f9-23753984da6b','2023-09-06 04:55:00','2023-10-06 04:55:00','MONI01',1,0,'2023-09-22 21:04:22','2023-09-22 21:04:22'),
+  (7,564,'0426dd54-7416-4df6-857e-a9a983077b08','2023-09-06 04:55:00','2023-10-06 04:55:00','MONI01',1,0,'2023-09-22 21:08:30','2023-09-22 21:08:30'),
+  (8,564,'ef04faa1-64a7-4ebb-a766-969ab8f3b232','2023-09-06 04:55:00','2023-10-06 04:55:00','MONI02',1,0,'2023-09-23 00:30:03','2023-09-23 00:30:03'),
+  (9,564,'54cb6624-20ff-4ba7-bddf-ac12891a9c1c','2023-11-06 04:55:00','2023-12-06 04:55:00','MONI01',1,0,'2023-09-23 01:10:03','2023-09-23 01:10:03');
+/*!40000 ALTER TABLE `siigologs` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-09-22 15:33:32
+
+
