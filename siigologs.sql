@@ -26,10 +26,11 @@ CREATE TABLE `siigologs` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int unsigned DEFAULT NULL,
   `siigo_id` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `subscription_expiration_old` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `subscription_expiration` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `subscription_expiration_old` timestamp NOT NULL,
+  `subscription_expiration` timestamp NOT NULL,
   `code` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `quantity` int unsigned DEFAULT NULL,
+  `seller` int unsigned DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
