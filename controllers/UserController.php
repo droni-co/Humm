@@ -27,6 +27,7 @@ class UserController {
         ->addMonths($finalItem->quantity)->toDateTimeString();
       $siigoLog->code = $finalItem->code;
       $siigoLog->quantity = $finalItem->quantity;
+      $siigoLog->seller = $invoice->seller;
 
       //save user
       $user->subscription_expiration = $siigoLog->subscription_expiration;
