@@ -12,7 +12,7 @@ class UserController {
       return $res;
     }
     $client = UserController::getClientById($invoice->customer->id);
-    $user = User::where('email', $client->contacts[0]->email)->first();
+    $user = User::where('email', ($client->contacts[0]->email ?? 'noEmail'))->first();
     $finalItem = UserController::getFinalItem($invoice->items);
     if(
       $user &&

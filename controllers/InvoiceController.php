@@ -2,13 +2,13 @@
 use GuzzleHttp\Client;
 use Carbon\Carbon;
 class InvoiceController {
-  public static function getInvoices() {
+  public static function getInvoices($forDate=null, $page=1) {
     $token = InvoiceController::getToken();
-    $today =  Carbon::now()->toDateString();
+    $today = $forDate ? $forDate : Carbon::now()->format('Y-m-d');
     $page_zise = 100;
     try {
       $client = new GuzzleHttp\Client(['base_uri' => $_ENV['SIIGO_API']]);
-      $url = '/v1/invoices?created_start='.$today.'&page_size='.$page_zise;
+      $url = '/v1/invoices?created_start='.$today.'&page_size='.$page_zise.'&page='.$page;
       $requestInvoices = $client->request('GET', $url, [
         'headers' => [
           'Authorization' => 'Bearer ' . $token->access_token,
@@ -31,7 +31,7 @@ class InvoiceController {
     }
     fclose($gestor);
     $savedToken = json_decode($saveToken);
-    if($savedToken->access_token && $savedToken->created_at > Carbon::now()->subSeconds(86400)->timestamp) {
+    if(isset($savedToken->access_token) && $savedToken->created_at > Carbon::now()->subSeconds(86400)->timestamp) {
       $finalToken = $savedToken;
     } else {
       $finalToken = InvoiceController::generateToken();
