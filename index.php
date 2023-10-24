@@ -10,7 +10,7 @@ $parseDate = isset($opts['date']) ? $opts['date'] : null;
 
 $todayDayNumber = Carbon\Carbon::now()->format('d');
 // check if today is greater than 10th of the month
-if($todayDayNumber < 10) {
+if($todayDayNumber < 10 && !$parseDate) {
   $parseDate = Carbon\Carbon::now()->startOfMonth()->toDateString();
 }
 function recrusiveOrders($parseDate, $page = 1) {
