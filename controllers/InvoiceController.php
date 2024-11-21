@@ -18,6 +18,7 @@ class InvoiceController {
       return json_decode($requestInvoices->getBody()->getContents());
     }
     catch (Exception $e) {
+      self::logData($e);
       return $e;
     }
   }
@@ -56,7 +57,7 @@ class InvoiceController {
 
   public static function logData($data) {
     $current_dir = dirname(__FILE__);
-    $nombre_fichero = $current_dir."/fetchLog.log";
+    $nombre_fichero = $current_dir."/../logs/fetchLog.log";
     $gestor = fopen($nombre_fichero, "a+");
       fwrite($gestor, date('y-m-d H:i'). "\n".$data."\n ------------------------------------ \n");
       fclose($gestor);
