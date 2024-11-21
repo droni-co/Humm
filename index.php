@@ -26,9 +26,6 @@ function recrusiveOrders($parseDate, $page = 1, $toDate = null) {
 
 $invoices = recrusiveOrders($parseDate);
 
-print_r(count($invoices->results));
-die();
-
 $res = [
   'info' => [
     'todayDayNumber' => $todayDayNumber,

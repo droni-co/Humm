@@ -18,7 +18,7 @@ class InvoiceController {
       return json_decode($requestInvoices->getBody()->getContents());
     }
     catch (Exception $e) {
-      self::logData($e);
+      self::logData(json_encode([$e, $token->access_token]));
       return $e;
     }
   }
