@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  gps:
+    image: mattrayner/lamp:0.8.0-2004-php7
+    container_name: gps
+    expose:
+      - "80"
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/app
+    network_mode: bridge
