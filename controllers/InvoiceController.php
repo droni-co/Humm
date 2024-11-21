@@ -1,5 +1,4 @@
 <?php
-use GuzzleHttp\Client;
 use Carbon\Carbon;
 class InvoiceController {
   public static function getInvoices($forDate=null, $page=1, $toDate=null) {
